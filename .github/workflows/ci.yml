@@ -7,10 +7,10 @@ jobs:
     name: Surge
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to http://roberto-ui-bar-loader.surge.sh
+      - name: Deploy
         uses: dswistowski/surge-sh-action@v1
         with:
           domain: 'http://roberto-ui-bar-loader.surge.sh'
-          project: '../../'
-          login: ${{ secrets.surge_login }}
-          token: ${{ secrets.surge_token }}
+          project: '.'
+          login: ${{ secrets.SURGE_LOGIN }}
+          token: ${{ secrets.SURGE_TOKEN }}
