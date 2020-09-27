@@ -1,16 +1,16 @@
-name: My workflow
+name: CI
 
 on: push
 
 jobs:
   my-job:
-    name: My job
+    name: Surge
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to http://roberto-ui-bar-loader.surge.sh
         uses: dswistowski/surge-sh-action@v1
         with:
           domain: 'http://roberto-ui-bar-loader.surge.sh'
-          project: '.'
+          project: '../../'
           login: ${{ secrets.surge_login }}
           token: ${{ secrets.surge_token }}
