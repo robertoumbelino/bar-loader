@@ -3,14 +3,16 @@ name: CI
 on: push
 
 jobs:
-  my-job:
+  build:
     name: Surge
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
+
       - name: Deploy
         uses: dswistowski/surge-sh-action@v1
         with:
-          domain: 'http://roberto-ui-bar-loader.surge.sh'
+          domain: 'roberto-ui-bar-loader.surge.sh'
           project: '.'
           login: ${{ secrets.SURGE_LOGIN }}
           token: ${{ secrets.SURGE_TOKEN }}
